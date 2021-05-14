@@ -1,0 +1,4 @@
+Pillow
+pytz
+requests
+python-dotenv
