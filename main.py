@@ -7,6 +7,7 @@ import os
 from io import BytesIO
 from os import path
 import sys
+import random
 
 EPD_WIDTH = 800
 EPD_HEIGHT = 480
@@ -65,7 +66,7 @@ def open_weather_map_icon(code, root_path):
 
 
 def get_data():
-    r = requests.get("{}?token={}".format(os.getenv('API_URL'), os.getenv('API_TOKEN')))
+    r = requests.get("{}?token={}&t={}".format(os.getenv('API_URL'), os.getenv('API_TOKEN'), random.random()))
 
     return r.json()['data']
 
